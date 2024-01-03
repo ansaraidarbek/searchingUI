@@ -23,7 +23,11 @@ function isUrlValid(str) {
 
 const listing = (text, i) => {
     img.classList.remove("revert");
-    if (isUrlValid(text[i]) || i === 0){
+    if (i === 0 ) {
+        iframe.src = '';
+        return
+    }
+    if (isUrlValid(text[i])){
         iframe.src = text[i];
     } else {
         img.classList.add("revert");
